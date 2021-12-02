@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
-import './Pokemon.css'
+import PropTypes from 'prop-types';
+import './Pokemon.css';
 
 export default function Pokemon({ pokemon }) {
-  const { name, abilityOne, abilityTwo, typeOne, typeTwo, pic, generation } = pokemon
+  const { name, abilityOne, abilityTwo, typeOne, typeTwo, pic, generation } = pokemon;
 
-  const hasSecondType = typeTwo !== 'NA'
-  const hasSecondAbility = abilityTwo !== 'NA'
+  const hasSecondType = typeTwo !== 'NA';
+  const hasSecondAbility = abilityTwo !== 'NA';
 
   return (
     <figure aria-label="pokemon">
@@ -23,7 +23,7 @@ export default function Pokemon({ pokemon }) {
         </p>
       </div>
     </figure>
-  )
+  );
 }
 
 Pokemon.propTypes = {
@@ -37,4 +37,4 @@ Pokemon.propTypes = {
     pic: PropTypes.string.isRequired,
     generation: PropTypes.string.isRequired,
   }).isRequired,
-}
+};

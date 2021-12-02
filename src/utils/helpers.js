@@ -1,41 +1,41 @@
 export const getGeneration = (generationId) => {
-  let generation
+  let generation; 
 
   switch (generationId) {
     case 1:
-      generation = 'First Generation'
-      break
+      generation = 'First Generation';
+      break;
     case 2:
-      generation = 'Second Generation'
-      break
+      generation = 'Second Generation';
+      break;
     case 3:
-      generation = 'Third Generation'
-      break
+      generation = 'Third Generation';
+      break;
     case 4:
-      generation = 'Fourth Generation'
-      break
+      generation = 'Fourth Generation';
+      break;
     case 5:
-      generation = 'Fifth Generation'
-      break
+      generation = 'Fifth Generation';
+      break;
     case 6:
-      generation = 'Sixth Generation'
-      break
+      generation = 'Sixth Generation';
+      break;
     case 7:
-      generation = 'Seventh Generation'
-      break
+      generation = 'Seventh Generation';
+      break;
     case 8:
-      generation = 'Eighth Generation'
-      break
+      generation = 'Eighth Generation';
+      break;
     default:
-      generation = '-MEGA-'
+      generation = '-MEGA-';
   }
 
-  return generation
-}
+  return generation;
+};
 
-const fixUrl = (url) => url.replace(/^http:\/\//i, 'https://')
+const fixUrl = (url) => url.replace(/^http:\/\//i, 'https://');
 
-const capitalizeWord = (name) => name.charAt(0).toUpperCase() + name.slice(1)
+const capitalizeWord = (name) => name.charAt(0).toUpperCase() + name.slice(1);
 
 export const pokeMunger = (pokemon) => {
   return {
@@ -47,5 +47,5 @@ export const pokeMunger = (pokemon) => {
     typeTwo: capitalizeWord(pokemon.type_2),
     pic: fixUrl(pokemon.url_image),
     generation: getGeneration(pokemon.generation_id),
-  }
-}
+  };
+};

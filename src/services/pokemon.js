@@ -1,4 +1,5 @@
-import {pokeMunger} from '../utils/helpers';
+import { pokeMunger } from '../utils/helpers';
+// import { fetch } from 'node-fetch';
 
 const favPokemon = [
   'charizard',
@@ -43,20 +44,20 @@ export const fetchSearchPokemon = (pokemonName) => {
   )
     .then((data) => data.json())
     .then((pokemonData) => {
-      const {results} = pokemonData;
+      const { results } = pokemonData;
       const pokemonResults = results.map((pokemon) => pokeMunger(pokemon));
       return pokemonResults;
     });
 };
 
 export const fetchTypes = async () => {
-  const res = fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex/types`);
+  const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex/types`);
 
-  const pokemonTypes = res.json();
+  const pokemonTypes = await res.json();
 
   // get random types
   const randomTypes = pokemonTypes
-    .map((pokemonType) => ({type: pokemonType.type}))
+    .map((pokemonType) => ({ type: pokemonType.type }))
     .sort(() => 0.5 - Math.random())
     .slice(0, 5);
   return randomTypes;
