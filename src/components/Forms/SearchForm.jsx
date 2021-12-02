@@ -1,6 +1,6 @@
 export default function SearchForm({ name, handleSubmit, handleNameChange }) {
   return (
-    <form aria-label="searchForm" onSubmit={handleSubmit}>
+    <form aria-label="searchForm" onSubmit={ handleSubmit }>
       <h3>Search a Pokemon!</h3>
       <label htmlFor="pokename">Name:</label>
       <input
@@ -12,5 +12,5 @@ export default function SearchForm({ name, handleSubmit, handleNameChange }) {
       />
       <button type="submit">PokeSearch!</button>
     </form>
-  )
+  );
 }

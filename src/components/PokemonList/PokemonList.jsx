@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import Pokemon from '../Pokemon/Pokemon'
-import './PokemonList.css'
+import PropTypes from 'prop-types';
+import Pokemon from '../Pokemon/Pokemon';
+import './PokemonList.css';
 
 export default function PokemonList({ pokemons }) {
   return (
@@ -10,14 +10,17 @@ export default function PokemonList({ pokemons }) {
           <li className="listItem" key={pokemon.id}>
             <Pokemon pokemon={pokemon} />
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }
 
+// object?
 PokemonList.propTypes = {
+  // making into array?
   pokemons: PropTypes.arrayOf(
+    // what's shape?
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
@@ -28,5 +31,6 @@ PokemonList.propTypes = {
       pic: PropTypes.string.isRequired,
       generation: PropTypes.string.isRequired,
     })
+    // huh?
   ).isRequired,
-}
+};
